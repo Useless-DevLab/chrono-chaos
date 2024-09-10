@@ -1,0 +1,57 @@
+/* GLOBAL */
+
+.chrono-chaos-clock {
+    width: 200px;
+    height: 200px;
+    border: solid black 5px;
+}
+
+/* ITSDISCOTIME */
+
+.chrono-chaos-itsdiscotime-clock {
+    background: linear-gradient(90deg, rgb(244 0 0 / 50%) 0%, rgb(67 94 255 / 50%) 50%, rgb(0 255 20 / 50%) 100%);
+    box-shadow: 15px 11px 15px 4px #ffd700ab;
+}
+
+.chrono-chaos-itsdiscotime-hour-hand {
+    color: red;
+    width: fit-content;
+    position: relative;
+    left: 111px;
+    top: 45px;
+    transform-origin: bottom
+}
+
+.chrono-chaos-itsdiscotime-minute-hand {
+    color: green;
+    width: fit-content;
+    position: relative;
+    left: 100px;
+    top: -20px;
+    transform-origin: bottom
+}
+
+.chrono-chaos-itsdiscotime-second-hand {
+    color: blue;
+    width: fit-content;
+    position: relative;
+    left: 100px;
+    top: -120px;
+    transform-origin: bottom
+}
+
+/* PROGRESSBAR */
+
+.chrono-chaos-progressbar-clock {
+    position: relative;
+}
+
+.chrono-chaos-progressbar-container {
+    min-width: -webkit-fill-available;
+    min-height: 30px;
+    border: solid black 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
