@@ -47,11 +47,23 @@
 }
 
 .chrono-chaos-progressbar-container {
-    min-width: -webkit-fill-available;
+    width: 100%;
     min-height: 30px;
     border: solid black 2px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.chrono-chaos-progressbar-bar {
+    width: 50%;
+    min-height: 30px;
+    background-color: greenyellow;
+    text-align: center;
+}
+
+.chrono-chaos-progressbar-text {
+    line-height: 30px;
+    margin: 0px;
 }
