@@ -1,85 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Clock EVER!</title>
-</head>
-<body>
-    <style>
-        .chrono-chaos-itsdiscotime-clock {
-            width: 200px;
-            height: 200px;
-            border: solid black 5px;
-            background: linear-gradient(90deg, rgb(244 0 0 / 50%) 0%, rgb(67 94 255 / 50%) 50%, rgb(0 255 20 / 50%) 100%);
-            box-shadow: 15px 11px 15px 4px #ffd700ab;
-        }
-
-        .chrono-chaos-itsdiscotime-hour-hand {
-            color: red;
-            width: fit-content;
-            position: relative;
-            left: 111px;
-            top: 45px;
-            transform-origin: bottom
-        }
-
-        .chrono-chaos-itsdiscotime-minute-hand {
-            color: green;
-            width: fit-content;
-            position: relative;
-            left: 100px;
-            top: -20px;
-            transform-origin: bottom
-        }
-
-        .chrono-chaos-itsdiscotime-second-hand {
-            color: blue;
-            width: fit-content;
-            position: relative;
-            left: 100px;
-            top: -120px;
-            transform-origin: bottom
-        }
-
-    </style>
-    <div class="chrono-chaos-itsdiscotime-clock">
-        <div class="chrono-chaos-itsdiscotime-hour-hand" name="chrono-chaos-itsdiscotime-hour-hand"></div>
-        <div class="chrono-chaos-itsdiscotime-minute-hand" name="chrono-chaos-itsdiscotime-minute-hand"></div>
-        <div class="chrono-chaos-itsdiscotime-second-hand" name="chrono-chaos-itsdiscotime-second-hand"></div>
-    </div>
-
-    <script>
-        let hours;
-        let minutes;
-        let seconds;
-        setInterval(() => {
-            let time = new Date();
-
-            hours = time.getHours();
-            minutes = time.getMinutes();
-            seconds = time.getSeconds();
-            milliseconds = time.getMilliseconds();
-
-            clockDivList = document.getElementsByClassName("chrono-chaos-itsdiscotime-clock");
-
-            for (const chronoChaosItsdiscotimeClockDiv of clockDivList) {
-                hoursDiv = chronoChaosItsdiscotimeClockDiv.childNodes[1];
-                minutesDiv = chronoChaosItsdiscotimeClockDiv.childNodes[3];
-                secondsDiv = chronoChaosItsdiscotimeClockDiv.childNodes[5];
-
-                hoursDiv.innerHTML = `<div>${hours}</div><div>${hours}</div><div>${hours}</div>`;
-                hoursDiv.style.transform = `translateX(-50%) rotate(${360 / 12 * (hours % 12 + (minutes / 60))}deg)`
-
-                minutesDiv.innerHTML = `<div>${minutes}</div><div>${minutes}</div><div>${minutes}</div><div>${minutes}</div>`;
-                minutesDiv.style.transform = `translateX(-50%) rotate(${360 / 60 * (minutes + (seconds / 60))}deg)`
-
-                secondsDiv.innerHTML = `<div>${seconds}</div><div>${seconds}</div><div>${seconds}</div><div>${seconds}</div><div>${seconds}</div>`;
-                secondsDiv.style.transform = `translateX(-50%) rotate(${360 / 60 * seconds}deg)`
-
-                chronoChaosItsdiscotimeClockDiv.style.background = `linear-gradient(${(milliseconds * 360 / 1000)}deg, rgb(244 0 0 / 50%) 0%, rgb(67 94 255 / 50%) 50%, rgb(0 255 20 / 50%) 100%)`
-            }
-        }, 50);
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Best Clock EVER!</title>
+        <link rel="stylesheet" href="clocks.css">
+    </head>
+    <body>
+        <div class="chrono-chaos-clock chrono-chaos-itsdiscotime-clock">
+            <div class="chrono-chaos-itsdiscotime-hour-hand" name="chrono-chaos-itsdiscotime-hour-hand"></div>
+            <div class="chrono-chaos-itsdiscotime-minute-hand" name="chrono-chaos-itsdiscotime-minute-hand"></div>
+            <div class="chrono-chaos-itsdiscotime-second-hand" name="chrono-chaos-itsdiscotime-second-hand"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="chrono-chaos-clock chrono-chaos-progressbar-clock">
+            <div class="chrono-chaos-progressbar-container">
+                <div class="chrono-chaos-progressbar-bar">
+                    <p class="chrono-chaos-progressbar-text">50%</p>
+                </div>
+            </div>
+        </div>
+        <script src="clocks.js"></script>
+    </body>
 </html>
