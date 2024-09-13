@@ -39,11 +39,12 @@ setInterval(() => {
 
 setInterval(() => {
     let daySeconds = (time.getHours() * 3600) + (time.getMinutes() * 60) + time.getSeconds();
-    let percentageOfTheDay = daySeconds / (3600 * 24);
+    let percentageOfTheDay = (daySeconds / (3600 * 24) * 100).toFixed(2);    
 
     let clockDivList = document.getElementsByClassName("chrono-chaos-progressbar-clock");
 
     for (const chronoChaosProgressBarClockDiv of clockDivList) {
-        chronoChaosProgressBarClockDiv.childNodes[1].innerHTML = `${percentageOfTheDay}%`;
+        chronoChaosProgressBarClockDiv.childNodes[1].childNodes[1].childNodes[1].innerHTML = `${percentageOfTheDay}%`;
+        chronoChaosProgressBarClockDiv.childNodes[1].childNodes[1].style.width = `${percentageOfTheDay}%`
     }
 }, 1000);
